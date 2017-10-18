@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the GSB Feature Seed Research Project Display feature.
+ */
+
+include_once 'gsb_feature_seed_research_library_display.features.inc';
