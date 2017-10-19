@@ -1,4 +1,4 @@
-name = GSB Feature Seed Research Project Display
+name = GSB Feature Seed Research Library Display
 description = Display for Seed Research Library
 core = 7.x
 package = GSB
@@ -7,8 +7,6 @@ dependencies[] = ctools
 dependencies[] = ds
 dependencies[] = gsb_feature_seed_research_library_ct
 features[ctools][] = ds:ds:1
-features[defaultconfig][] = ds_field_settings_info:node|seed_research_project|default
-features[defaultconfig][] = ds_layout_settings_info:node|seed_research_project|default
 features[ds_field_settings][] = field_collection_item|field_research_results|default
 features[ds_field_settings][] = node|seed_research_project|default
 features[ds_layout_settings][] = field_collection_item|field_research_results|default
