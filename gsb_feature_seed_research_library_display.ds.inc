@@ -72,22 +72,6 @@ function gsb_feature_seed_research_library_display_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_month' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'lb' => 'Award Date - ',
-          'lb-el' => 'h5',
-          'lb-col' => TRUE,
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'field-name-field-month',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
     'field_research_locations' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -219,16 +203,14 @@ function gsb_feature_seed_research_library_display_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_person_fac_single_ref',
-        1 => 'field_other_name',
+        1 => 'full_name_with_url',
         2 => 'field_school_department',
-        3 => 'field_link_single',
       ),
     ),
     'fields' => array(
       'field_person_fac_single_ref' => 'ds_content',
-      'field_other_name' => 'ds_content',
+      'full_name_with_url' => 'ds_content',
       'field_school_department' => 'ds_content',
-      'field_link_single' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -254,16 +236,14 @@ function gsb_feature_seed_research_library_display_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_person_fac_single_ref',
-        1 => 'field_other_name',
+        1 => 'full_name_with_url',
         2 => 'field_school_department',
-        3 => 'field_link_single',
       ),
     ),
     'fields' => array(
       'field_person_fac_single_ref' => 'ds_content',
-      'field_other_name' => 'ds_content',
+      'full_name_with_url' => 'ds_content',
       'field_school_department' => 'ds_content',
-      'field_link_single' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -290,24 +270,22 @@ function gsb_feature_seed_research_library_display_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'field_srl_principal_investigator',
         1 => 'field_srl_co_investigators',
-        2 => 'field_research_locations',
-        3 => 'field_month',
-        4 => 'field_year',
-        5 => 'field_award_type',
-        6 => 'field_status',
-        7 => 'field_abstract',
-        8 => 'field_research_results',
+        2 => 'gsb_feature_seed_research_library_display_award_date',
+        3 => 'field_award_type',
+        4 => 'field_status',
+        5 => 'field_abstract',
+        6 => 'field_research_locations',
+        7 => 'field_research_results',
       ),
     ),
     'fields' => array(
       'field_srl_principal_investigator' => 'ds_content',
       'field_srl_co_investigators' => 'ds_content',
-      'field_research_locations' => 'ds_content',
-      'field_month' => 'ds_content',
-      'field_year' => 'ds_content',
+      'gsb_feature_seed_research_library_display_award_date' => 'ds_content',
       'field_award_type' => 'ds_content',
       'field_status' => 'ds_content',
       'field_abstract' => 'ds_content',
+      'field_research_locations' => 'ds_content',
       'field_research_results' => 'ds_content',
     ),
     'classes' => array(),
