@@ -12,8 +12,7 @@ function gsb_feature_seed_research_library_display_defaultconfig_features() {
     'gsb_feature_seed_research_library_display' => array(
       'ds_field_settings_info' => 'ds_field_settings_info',
       'ds_layout_settings_info' => 'ds_layout_settings_info',
-      'ds_view_modes_info' => 'ds_view_modes_info',
-      'field_default_fields' => 'field_default_fields',
+      'views_default_views' => 'views_default_views',
     ),
   );
 }
@@ -26,187 +25,72 @@ function gsb_feature_seed_research_library_display_defaultconfig_ds_field_settin
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
-  $ds_fieldsetting->id = 'field_collection_item|field_research_results|default';
-  $ds_fieldsetting->entity_type = 'field_collection_item';
-  $ds_fieldsetting->bundle = 'field_research_results';
-  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->id = 'node|seed_research_project|compact';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'seed_research_project';
+  $ds_fieldsetting->view_mode = 'compact';
   $ds_fieldsetting->settings = array(
-    'field_file_single_public' => array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
       'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => '',
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'field-name-field-file-single-public',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-          'fi-first-last' => FALSE,
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => '',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
         ),
+        'conditions' => array(),
       ),
     ),
   );
-  $export['field_collection_item|field_research_results|default'] = $ds_fieldsetting;
+  $export['node|seed_research_project|compact'] = $ds_fieldsetting;
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
-  $ds_fieldsetting->id = 'node|seed_research_project|default';
+  $ds_fieldsetting->id = 'node|seed_research_project|expanded';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'seed_research_project';
-  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->view_mode = 'expanded';
   $ds_fieldsetting->settings = array(
-    'field_abstract' => array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
       'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => '',
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'lb-el' => 'h3',
-          'lb-col' => TRUE,
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'field-name-field-abstract',
+          'ow-cl' => '',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
         ),
-      ),
-    ),
-    'field_award_type' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'lb' => 'Award Type - ',
-          'lb-el' => 'h5',
-          'lb-col' => TRUE,
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'field-name-field-award-type',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
+        'conditions' => array(),
       ),
     ),
     'field_month' => array(
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'lb' => 'Award Date - ',
-          'lb-el' => 'h5',
-          'lb-col' => TRUE,
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'field-name-field-month',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_research_locations' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'lb' => 'Research Location - ',
-          'lb-el' => 'h5',
-          'lb-col' => TRUE,
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'field-name-field-research-locations',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_research_results' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'lb-el' => 'h3',
-          'lb-col' => TRUE,
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'field-name-field-research-results',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_srl_co_investigators' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'lb-el' => 'h4',
-          'lb-col' => TRUE,
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'field-name-field-srl-co-investigators',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_srl_principal_investigator' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'lb-el' => 'h4',
-          'lb-col' => TRUE,
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'field-name-field-srl-principal-investigator',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_status' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'lb' => 'Status - ',
-          'lb-el' => 'h5',
-          'lb-col' => TRUE,
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'field-name-field-status',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-  );
-  $export['node|seed_research_project|default'] = $ds_fieldsetting;
-
-  $ds_fieldsetting = new stdClass();
-  $ds_fieldsetting->api_version = 1;
-  $ds_fieldsetting->id = 'node|seed_research_project|seed_research_project';
-  $ds_fieldsetting->entity_type = 'node';
-  $ds_fieldsetting->bundle = 'seed_research_project';
-  $ds_fieldsetting->view_mode = 'seed_research_project';
-  $ds_fieldsetting->settings = array(
-    'field_month' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'lb' => 'Award Date',
-        ),
-      ),
-    ),
-    'field_srl_principal_investigator' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
+          'lb' => 'Award Date – ',
           'lb-col' => TRUE,
         ),
       ),
     ),
   );
-  $export['node|seed_research_project|seed_research_project'] = $ds_fieldsetting;
+  $export['node|seed_research_project|expanded'] = $ds_fieldsetting;
 
   return $export;
 }
@@ -219,136 +103,19 @@ function gsb_feature_seed_research_library_display_defaultconfig_ds_layout_setti
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
-  $ds_layout->id = 'field_collection_item|field_research_results|default';
-  $ds_layout->entity_type = 'field_collection_item';
-  $ds_layout->bundle = 'field_research_results';
-  $ds_layout->view_mode = 'default';
-  $ds_layout->layout = 'ds_1col';
-  $ds_layout->settings = array(
-    'regions' => array(
-      'ds_content' => array(
-        0 => 'field_link_single',
-        1 => 'field_file_single_public',
-      ),
-    ),
-    'fields' => array(
-      'field_link_single' => 'ds_content',
-      'field_file_single_public' => 'ds_content',
-    ),
-    'classes' => array(),
-    'wrappers' => array(
-      'ds_content' => 'div',
-    ),
-    'layout_wrapper' => 'div',
-    'layout_attributes' => '',
-    'layout_attributes_merge' => 1,
-    'layout_link_attribute' => '',
-    'layout_link_custom' => '',
-    'layout_disable_css' => FALSE,
-  );
-  $export['field_collection_item|field_research_results|default'] = $ds_layout;
-
-  $ds_layout = new stdClass();
-  $ds_layout->api_version = 1;
-  $ds_layout->id = 'field_collection_item|field_srl_co_investigators|default';
-  $ds_layout->entity_type = 'field_collection_item';
-  $ds_layout->bundle = 'field_srl_co_investigators';
-  $ds_layout->view_mode = 'default';
-  $ds_layout->layout = 'ds_1col';
-  $ds_layout->settings = array(
-    'regions' => array(
-      'ds_content' => array(
-        0 => 'field_person_fac_single_ref',
-        1 => 'field_other_name',
-        2 => 'field_school_department',
-        3 => 'field_link_single',
-      ),
-    ),
-    'fields' => array(
-      'field_person_fac_single_ref' => 'ds_content',
-      'field_other_name' => 'ds_content',
-      'field_school_department' => 'ds_content',
-      'field_link_single' => 'ds_content',
-    ),
-    'classes' => array(),
-    'wrappers' => array(
-      'ds_content' => 'div',
-    ),
-    'layout_wrapper' => 'div',
-    'layout_attributes' => '',
-    'layout_attributes_merge' => 1,
-    'layout_link_attribute' => '',
-    'layout_link_custom' => '',
-    'layout_disable_css' => FALSE,
-  );
-  $export['field_collection_item|field_srl_co_investigators|default'] = $ds_layout;
-
-  $ds_layout = new stdClass();
-  $ds_layout->api_version = 1;
-  $ds_layout->id = 'field_collection_item|field_srl_principal_investigator|default';
-  $ds_layout->entity_type = 'field_collection_item';
-  $ds_layout->bundle = 'field_srl_principal_investigator';
-  $ds_layout->view_mode = 'default';
-  $ds_layout->layout = 'ds_1col';
-  $ds_layout->settings = array(
-    'regions' => array(
-      'ds_content' => array(
-        0 => 'field_person_fac_single_ref',
-        1 => 'field_other_name',
-        2 => 'field_school_department',
-        3 => 'field_link_single',
-      ),
-    ),
-    'fields' => array(
-      'field_person_fac_single_ref' => 'ds_content',
-      'field_other_name' => 'ds_content',
-      'field_school_department' => 'ds_content',
-      'field_link_single' => 'ds_content',
-    ),
-    'classes' => array(),
-    'wrappers' => array(
-      'ds_content' => 'div',
-    ),
-    'layout_wrapper' => 'div',
-    'layout_attributes' => '',
-    'layout_attributes_merge' => 1,
-    'layout_link_attribute' => '',
-    'layout_link_custom' => '',
-    'layout_disable_css' => FALSE,
-  );
-  $export['field_collection_item|field_srl_principal_investigator|default'] = $ds_layout;
-
-  $ds_layout = new stdClass();
-  $ds_layout->api_version = 1;
-  $ds_layout->id = 'node|seed_research_project|default';
+  $ds_layout->id = 'node|seed_research_project|compact';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'seed_research_project';
-  $ds_layout->view_mode = 'default';
+  $ds_layout->view_mode = 'compact';
   $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_srl_principal_investigator',
-        1 => 'field_srl_co_investigators',
-        2 => 'field_research_locations',
-        3 => 'field_month',
-        4 => 'field_year',
-        5 => 'field_award_type',
-        6 => 'field_status',
-        7 => 'field_abstract',
-        8 => 'field_research_results',
+        0 => 'title',
       ),
     ),
     'fields' => array(
-      'field_srl_principal_investigator' => 'ds_content',
-      'field_srl_co_investigators' => 'ds_content',
-      'field_research_locations' => 'ds_content',
-      'field_month' => 'ds_content',
-      'field_year' => 'ds_content',
-      'field_award_type' => 'ds_content',
-      'field_status' => 'ds_content',
-      'field_abstract' => 'ds_content',
-      'field_research_results' => 'ds_content',
+      'title' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -361,39 +128,29 @@ function gsb_feature_seed_research_library_display_defaultconfig_ds_layout_setti
     'layout_link_custom' => '',
     'layout_disable_css' => FALSE,
   );
-  $export['node|seed_research_project|default'] = $ds_layout;
+  $export['node|seed_research_project|compact'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
-  $ds_layout->id = 'node|seed_research_project|seed_research_project';
+  $ds_layout->id = 'node|seed_research_project|expanded';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'seed_research_project';
-  $ds_layout->view_mode = 'seed_research_project';
+  $ds_layout->view_mode = 'expanded';
   $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_srl_principal_investigator',
-        1 => 'field_srl_co_investigators',
-        2 => 'field_research_locations',
-        3 => 'field_month',
-        4 => 'field_year',
-        5 => 'field_award_type',
-        6 => 'field_status',
-        7 => 'field_abstract',
-        8 => 'field_research_results',
+        0 => 'title',
+        1 => 'field_srl_principal_investigator',
+        2 => 'field_month',
+        3 => 'field_year',
       ),
     ),
     'fields' => array(
+      'title' => 'ds_content',
       'field_srl_principal_investigator' => 'ds_content',
-      'field_srl_co_investigators' => 'ds_content',
-      'field_research_locations' => 'ds_content',
       'field_month' => 'ds_content',
       'field_year' => 'ds_content',
-      'field_award_type' => 'ds_content',
-      'field_status' => 'ds_content',
-      'field_abstract' => 'ds_content',
-      'field_research_results' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -406,987 +163,1371 @@ function gsb_feature_seed_research_library_display_defaultconfig_ds_layout_setti
     'layout_link_custom' => '',
     'layout_disable_css' => FALSE,
   );
-  $export['node|seed_research_project|seed_research_project'] = $ds_layout;
+  $export['node|seed_research_project|expanded'] = $ds_layout;
 
   return $export;
 }
 
 /**
- * Implements hook_defaultconfig_ds_view_modes_info().
+ * Implements hook_defaultconfig_views_default_views().
  */
-function gsb_feature_seed_research_library_display_defaultconfig_ds_view_modes_info() {
+function gsb_feature_seed_research_library_display_defaultconfig_views_default_views() {
   $export = array();
 
-  $ds_view_mode = new stdClass();
-  $ds_view_mode->api_version = 1;
-  $ds_view_mode->view_mode = 'seed_research_project';
-  $ds_view_mode->label = 'Seed Research Project';
-  $ds_view_mode->entities = array(
-    'node' => 'node',
+  $view = new view();
+  $view->name = 'seed_research_filters';
+  $view->description = '';
+  $view->tag = '';
+  $view->base_table = 'node';
+  $view->human_name = 'Seed Research Filters';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['css_class'] = 'content-pane-listing';
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'allow_secondary' => 1,
+      'secondary_label' => 'Narrow your results',
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'field_search_field_value' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'field_status_tid' => array(
+      'bef_format' => 'bef',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 0,
+        'is_secondary' => 1,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'field_award_type_tid' => array(
+      'bef_format' => 'bef',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 0,
+        'is_secondary' => 1,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'secondary_label' => NULL,
+    'collapsible_label' => NULL,
+    'combine_rewrite' => NULL,
+    'reset_label' => NULL,
+    'bef_filter_description' => NULL,
+    'any_label' => NULL,
+    'filter_rewrite_values' => NULL,
   );
-  $export['seed_research_project'] = $ds_view_mode;
+  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
+  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'gsb_wysiwyg_text';
+  $handler->display->display_options['pager']['type'] = 'load_more';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['more_button_text'] = 'Show more';
+  $handler->display->display_options['pager']['options']['use_go_to_top_link'] = 1;
+  $handler->display->display_options['pager']['options']['use_go_to_top_text'] = 'Back to the Top';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Sorry, we could not find any projects that matched your search. Please adjust the filters for the search.';
+  $handler->display->display_options['empty']['area']['format'] = 'gsb_wysiwyg_text';
+  /* Relationship: Content: Principal Investigator (field_srl_principal_investigator) */
+  $handler->display->display_options['relationships']['field_srl_principal_investigator_value']['id'] = 'field_srl_principal_investigator_value';
+  $handler->display->display_options['relationships']['field_srl_principal_investigator_value']['table'] = 'field_data_field_srl_principal_investigator';
+  $handler->display->display_options['relationships']['field_srl_principal_investigator_value']['field'] = 'field_srl_principal_investigator_value';
+  $handler->display->display_options['relationships']['field_srl_principal_investigator_value']['delta'] = '-1';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Status */
+  $handler->display->display_options['fields']['field_status']['id'] = 'field_status';
+  $handler->display->display_options['fields']['field_status']['table'] = 'field_data_field_status';
+  $handler->display->display_options['fields']['field_status']['field'] = 'field_status';
+  $handler->display->display_options['fields']['field_status']['label'] = '';
+  $handler->display->display_options['fields']['field_status']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_status']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_status']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_status']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: Content: Award Type */
+  $handler->display->display_options['fields']['field_award_type']['id'] = 'field_award_type';
+  $handler->display->display_options['fields']['field_award_type']['table'] = 'field_data_field_award_type';
+  $handler->display->display_options['fields']['field_award_type']['field'] = 'field_award_type';
+  $handler->display->display_options['fields']['field_award_type']['label'] = '';
+  $handler->display->display_options['fields']['field_award_type']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_award_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_award_type']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_award_type']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_award_type']['delta_offset'] = '0';
+  /* Field: Content: Month */
+  $handler->display->display_options['fields']['field_month']['id'] = 'field_month';
+  $handler->display->display_options['fields']['field_month']['table'] = 'field_data_field_month';
+  $handler->display->display_options['fields']['field_month']['field'] = 'field_month';
+  $handler->display->display_options['fields']['field_month']['label'] = '';
+  $handler->display->display_options['fields']['field_month']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_month']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_month']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: Field: Graduation Year */
+  $handler->display->display_options['fields']['field_year']['id'] = 'field_year';
+  $handler->display->display_options['fields']['field_year']['table'] = 'field_data_field_year';
+  $handler->display->display_options['fields']['field_year']['field'] = 'field_year';
+  $handler->display->display_options['fields']['field_year']['label'] = '';
+  $handler->display->display_options['fields']['field_year']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_year']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_year']['settings'] = array(
+    'format_type' => 'year',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'show_repeat_rule' => 'show',
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<h2>[title]</h2>
+<span class="label-inline">School/Department – </span>[field_school_department]<br>
+<span class="label-inline">Project Status – </span>[field_status]<br>
+<span class="label-inline">Award Type – </span>[field_award_type]<br>
+<span class="label-inline">Award Date – </span>[field_month] [field_year]<br>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Sort criterion: Field: Graduation Year (field_year) */
+  $handler->display->display_options['sorts']['field_year_value']['id'] = 'field_year_value';
+  $handler->display->display_options['sorts']['field_year_value']['table'] = 'field_data_field_year';
+  $handler->display->display_options['sorts']['field_year_value']['field'] = 'field_year_value';
+  $handler->display->display_options['sorts']['field_year_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Month (field_month) */
+  $handler->display->display_options['sorts']['field_month_value']['id'] = 'field_month_value';
+  $handler->display->display_options['sorts']['field_month_value']['table'] = 'field_data_field_month';
+  $handler->display->display_options['sorts']['field_month_value']['field'] = 'field_month_value';
+  $handler->display->display_options['sorts']['field_month_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'AND',
+  );
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'seed_research_project' => 'seed_research_project',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Award Type (field_award_type) */
+  $handler->display->display_options['filters']['field_award_type_tid']['id'] = 'field_award_type_tid';
+  $handler->display->display_options['filters']['field_award_type_tid']['table'] = 'field_data_field_award_type';
+  $handler->display->display_options['filters']['field_award_type_tid']['field'] = 'field_award_type_tid';
+  $handler->display->display_options['filters']['field_award_type_tid']['group'] = 2;
+  $handler->display->display_options['filters']['field_award_type_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_award_type_tid']['expose']['operator_id'] = 'field_award_type_tid_op';
+  $handler->display->display_options['filters']['field_award_type_tid']['expose']['label'] = 'Award Type (field_award_type)';
+  $handler->display->display_options['filters']['field_award_type_tid']['expose']['operator'] = 'field_award_type_tid_op';
+  $handler->display->display_options['filters']['field_award_type_tid']['expose']['identifier'] = 'field_award_type_tid';
+  $handler->display->display_options['filters']['field_award_type_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_award_type_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    11 => 0,
+    151 => 0,
+    16 => 0,
+    256 => 0,
+    21 => 0,
+    71 => 0,
+    241 => 0,
+    61 => 0,
+    171 => 0,
+    56 => 0,
+    326 => 0,
+    66 => 0,
+    201 => 0,
+    221 => 0,
+    216 => 0,
+    226 => 0,
+    231 => 0,
+    246 => 0,
+    236 => 0,
+    31 => 0,
+    36 => 0,
+    41 => 0,
+    91 => 0,
+    146 => 0,
+    136 => 0,
+    26 => 0,
+    46 => 0,
+    51 => 0,
+    81 => 0,
+    86 => 0,
+    96 => 0,
+    106 => 0,
+    116 => 0,
+    121 => 0,
+    126 => 0,
+    131 => 0,
+    141 => 0,
+    156 => 0,
+    161 => 0,
+    166 => 0,
+    176 => 0,
+    181 => 0,
+    186 => 0,
+    191 => 0,
+    206 => 0,
+    211 => 0,
+    251 => 0,
+    261 => 0,
+    266 => 0,
+    271 => 0,
+    276 => 0,
+    281 => 0,
+    291 => 0,
+    296 => 0,
+    301 => 0,
+    101 => 0,
+  );
+  $handler->display->display_options['filters']['field_award_type_tid']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_award_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_award_type_tid']['vocabulary'] = 'seed_award_type';
+  $handler->display->display_options['filters']['field_award_type_tid']['error_message'] = FALSE;
+  /* Filter criterion: Content: Status (field_status) */
+  $handler->display->display_options['filters']['field_status_tid']['id'] = 'field_status_tid';
+  $handler->display->display_options['filters']['field_status_tid']['table'] = 'field_data_field_status';
+  $handler->display->display_options['filters']['field_status_tid']['field'] = 'field_status_tid';
+  $handler->display->display_options['filters']['field_status_tid']['group'] = 2;
+  $handler->display->display_options['filters']['field_status_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_status_tid']['expose']['operator_id'] = 'field_status_tid_op';
+  $handler->display->display_options['filters']['field_status_tid']['expose']['label'] = 'Status (field_status)';
+  $handler->display->display_options['filters']['field_status_tid']['expose']['operator'] = 'field_status_tid_op';
+  $handler->display->display_options['filters']['field_status_tid']['expose']['identifier'] = 'field_status_tid';
+  $handler->display->display_options['filters']['field_status_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_status_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    11 => 0,
+    151 => 0,
+    16 => 0,
+    256 => 0,
+    21 => 0,
+    71 => 0,
+    241 => 0,
+    61 => 0,
+    171 => 0,
+    56 => 0,
+    326 => 0,
+    66 => 0,
+    201 => 0,
+    221 => 0,
+    216 => 0,
+    226 => 0,
+    231 => 0,
+    246 => 0,
+    236 => 0,
+    31 => 0,
+    36 => 0,
+    41 => 0,
+    91 => 0,
+    146 => 0,
+    136 => 0,
+    26 => 0,
+    46 => 0,
+    51 => 0,
+    81 => 0,
+    86 => 0,
+    96 => 0,
+    106 => 0,
+    116 => 0,
+    121 => 0,
+    126 => 0,
+    131 => 0,
+    141 => 0,
+    156 => 0,
+    161 => 0,
+    166 => 0,
+    176 => 0,
+    181 => 0,
+    186 => 0,
+    191 => 0,
+    206 => 0,
+    211 => 0,
+    251 => 0,
+    261 => 0,
+    266 => 0,
+    271 => 0,
+    276 => 0,
+    281 => 0,
+    291 => 0,
+    296 => 0,
+    301 => 0,
+    101 => 0,
+  );
+  $handler->display->display_options['filters']['field_status_tid']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_status_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_status_tid']['vocabulary'] = 'seed_status';
+  $handler->display->display_options['filters']['field_status_tid']['error_message'] = FALSE;
+  /* Filter criterion: Content: Research Location(s) (field_research_locations) */
+  $handler->display->display_options['filters']['field_research_locations_value']['id'] = 'field_research_locations_value';
+  $handler->display->display_options['filters']['field_research_locations_value']['table'] = 'field_data_field_research_locations';
+  $handler->display->display_options['filters']['field_research_locations_value']['field'] = 'field_research_locations_value';
+  $handler->display->display_options['filters']['field_research_locations_value']['group'] = 2;
+  $handler->display->display_options['filters']['field_research_locations_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_research_locations_value']['expose']['operator_id'] = 'field_research_locations_value_op';
+  $handler->display->display_options['filters']['field_research_locations_value']['expose']['label'] = 'Research Location(s) (field_research_locations)';
+  $handler->display->display_options['filters']['field_research_locations_value']['expose']['operator'] = 'field_research_locations_value_op';
+  $handler->display->display_options['filters']['field_research_locations_value']['expose']['identifier'] = 'field_research_locations_value';
+  $handler->display->display_options['filters']['field_research_locations_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    11 => 0,
+    151 => 0,
+    16 => 0,
+    256 => 0,
+    21 => 0,
+    71 => 0,
+    241 => 0,
+    61 => 0,
+    171 => 0,
+    56 => 0,
+    326 => 0,
+    66 => 0,
+    201 => 0,
+    221 => 0,
+    216 => 0,
+    226 => 0,
+    231 => 0,
+    246 => 0,
+    236 => 0,
+    31 => 0,
+    36 => 0,
+    41 => 0,
+    91 => 0,
+    146 => 0,
+    136 => 0,
+    26 => 0,
+    46 => 0,
+    51 => 0,
+    81 => 0,
+    86 => 0,
+    96 => 0,
+    106 => 0,
+    116 => 0,
+    121 => 0,
+    126 => 0,
+    131 => 0,
+    141 => 0,
+    156 => 0,
+    161 => 0,
+    166 => 0,
+    176 => 0,
+    181 => 0,
+    186 => 0,
+    191 => 0,
+    206 => 0,
+    211 => 0,
+    251 => 0,
+    261 => 0,
+    266 => 0,
+    271 => 0,
+    276 => 0,
+    281 => 0,
+    291 => 0,
+    296 => 0,
+    301 => 0,
+    101 => 0,
+  );
+  $handler->display->display_options['filters']['field_research_locations_value']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['field_research_locations_value']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['field_research_locations_value']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['field_research_locations_value']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['field_research_locations_value']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Field collection item: School or Department  (field_school_department) */
+  $handler->display->display_options['filters']['field_school_department_tid']['id'] = 'field_school_department_tid';
+  $handler->display->display_options['filters']['field_school_department_tid']['table'] = 'field_data_field_school_department';
+  $handler->display->display_options['filters']['field_school_department_tid']['field'] = 'field_school_department_tid';
+  $handler->display->display_options['filters']['field_school_department_tid']['relationship'] = 'field_srl_principal_investigator_value';
+  $handler->display->display_options['filters']['field_school_department_tid']['group'] = 2;
+  $handler->display->display_options['filters']['field_school_department_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_school_department_tid']['expose']['operator_id'] = 'field_school_department_tid_op';
+  $handler->display->display_options['filters']['field_school_department_tid']['expose']['label'] = 'School or Department (field_school_department)';
+  $handler->display->display_options['filters']['field_school_department_tid']['expose']['operator'] = 'field_school_department_tid_op';
+  $handler->display->display_options['filters']['field_school_department_tid']['expose']['identifier'] = 'field_school_department_tid';
+  $handler->display->display_options['filters']['field_school_department_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_school_department_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    11 => 0,
+    151 => 0,
+    16 => 0,
+    256 => 0,
+    21 => 0,
+    71 => 0,
+    241 => 0,
+    61 => 0,
+    171 => 0,
+    56 => 0,
+    326 => 0,
+    66 => 0,
+    201 => 0,
+    221 => 0,
+    216 => 0,
+    226 => 0,
+    231 => 0,
+    246 => 0,
+    236 => 0,
+    31 => 0,
+    36 => 0,
+    41 => 0,
+    91 => 0,
+    146 => 0,
+    136 => 0,
+    26 => 0,
+    46 => 0,
+    51 => 0,
+    81 => 0,
+    86 => 0,
+    96 => 0,
+    106 => 0,
+    116 => 0,
+    121 => 0,
+    126 => 0,
+    131 => 0,
+    141 => 0,
+    156 => 0,
+    161 => 0,
+    166 => 0,
+    176 => 0,
+    181 => 0,
+    186 => 0,
+    191 => 0,
+    206 => 0,
+    211 => 0,
+    251 => 0,
+    261 => 0,
+    266 => 0,
+    271 => 0,
+    276 => 0,
+    281 => 0,
+    291 => 0,
+    296 => 0,
+    301 => 0,
+    101 => 0,
+  );
+  $handler->display->display_options['filters']['field_school_department_tid']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_school_department_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_school_department_tid']['vocabulary'] = 'schools';
+  $handler->display->display_options['filters']['field_school_department_tid']['error_message'] = FALSE;
+
+  /* Display: Seed Research Filters */
+  $handler = $view->new_display('panel_pane', 'Seed Research Filters', 'seed_research_filters_pane');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'content-pane-listing';
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'allow_secondary' => 0,
+      'secondary_label' => 'Advanced options',
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'field_award_type_tid' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'field_status_tid' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'secondary_label' => NULL,
+    'collapsible_label' => NULL,
+    'combine_rewrite' => NULL,
+    'reset_label' => NULL,
+    'bef_filter_description' => NULL,
+    'any_label' => NULL,
+    'filter_rewrite_values' => NULL,
+  );
+  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
+  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'gsb_wysiwyg_text';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'expanded';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Principal Investigator (field_srl_principal_investigator) */
+  $handler->display->display_options['relationships']['field_srl_principal_investigator_value']['id'] = 'field_srl_principal_investigator_value';
+  $handler->display->display_options['relationships']['field_srl_principal_investigator_value']['table'] = 'field_data_field_srl_principal_investigator';
+  $handler->display->display_options['relationships']['field_srl_principal_investigator_value']['field'] = 'field_srl_principal_investigator_value';
+  $handler->display->display_options['relationships']['field_srl_principal_investigator_value']['delta'] = '-1';
+  $handler->display->display_options['pane_title'] = 'Seed Research: Multiple Criteria';
+  $handler->display->display_options['pane_category']['name'] = 'Customizable Content Lists';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['set_view_mode'] = 'set_view_mode';
+  $handler->display->display_options['allow']['set_style_plugin'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['exposed_form_overrides'] = array(
+    'filters' => array(
+      'field_award_type_tid' => '',
+      'field_status_tid' => '',
+    ),
+  );
+  $export['seed_research_filters'] = $view;
+
+  $view = new view();
+  $view->name = 'seed_research_listing';
+  $view->description = '';
+  $view->tag = '';
+  $view->base_table = 'node';
+  $view->human_name = 'Seed Research Listing';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'allow_secondary' => 1,
+      'secondary_label' => 'Narrow your results',
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+    ),
+    'field_search_field_value' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+    ),
+    'field_status_tid' => array(
+      'bef_format' => 'bef',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 0,
+        'is_secondary' => 1,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+    ),
+    'field_award_type_tid' => array(
+      'bef_format' => 'bef',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 0,
+        'is_secondary' => 1,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+    ),
+    'secondary_label' => NULL,
+    'collapsible_label' => NULL,
+    'combine_rewrite' => NULL,
+    'reset_label' => NULL,
+  );
+  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
+  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'gsb_wysiwyg_text';
+  $handler->display->display_options['pager']['type'] = 'load_more';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['more_button_text'] = 'Show more';
+  $handler->display->display_options['pager']['options']['use_go_to_top_link'] = 1;
+  $handler->display->display_options['pager']['options']['use_go_to_top_text'] = 'Back to the Top';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Sorry, we could not find any projects that matched your search. Please adjust the filters for the search.';
+  $handler->display->display_options['empty']['area']['format'] = 'gsb_wysiwyg_text';
+  /* Relationship: Content: Principal Investigator (field_srl_principal_investigator) */
+  $handler->display->display_options['relationships']['field_srl_principal_investigator_value']['id'] = 'field_srl_principal_investigator_value';
+  $handler->display->display_options['relationships']['field_srl_principal_investigator_value']['table'] = 'field_data_field_srl_principal_investigator';
+  $handler->display->display_options['relationships']['field_srl_principal_investigator_value']['field'] = 'field_srl_principal_investigator_value';
+  $handler->display->display_options['relationships']['field_srl_principal_investigator_value']['delta'] = '-1';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Status */
+  $handler->display->display_options['fields']['field_status']['id'] = 'field_status';
+  $handler->display->display_options['fields']['field_status']['table'] = 'field_data_field_status';
+  $handler->display->display_options['fields']['field_status']['field'] = 'field_status';
+  $handler->display->display_options['fields']['field_status']['label'] = '';
+  $handler->display->display_options['fields']['field_status']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_status']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_status']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_status']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: Field collection item: School or Department  */
+  $handler->display->display_options['fields']['field_school_department']['id'] = 'field_school_department';
+  $handler->display->display_options['fields']['field_school_department']['table'] = 'field_data_field_school_department';
+  $handler->display->display_options['fields']['field_school_department']['field'] = 'field_school_department';
+  $handler->display->display_options['fields']['field_school_department']['relationship'] = 'field_srl_principal_investigator_value';
+  $handler->display->display_options['fields']['field_school_department']['label'] = '';
+  $handler->display->display_options['fields']['field_school_department']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_school_department']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_school_department']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_school_department']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_school_department']['delta_offset'] = '0';
+  /* Field: Content: Award Type */
+  $handler->display->display_options['fields']['field_award_type']['id'] = 'field_award_type';
+  $handler->display->display_options['fields']['field_award_type']['table'] = 'field_data_field_award_type';
+  $handler->display->display_options['fields']['field_award_type']['field'] = 'field_award_type';
+  $handler->display->display_options['fields']['field_award_type']['label'] = '';
+  $handler->display->display_options['fields']['field_award_type']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_award_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_award_type']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_award_type']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_award_type']['delta_offset'] = '0';
+  /* Field: Content: Month */
+  $handler->display->display_options['fields']['field_month']['id'] = 'field_month';
+  $handler->display->display_options['fields']['field_month']['table'] = 'field_data_field_month';
+  $handler->display->display_options['fields']['field_month']['field'] = 'field_month';
+  $handler->display->display_options['fields']['field_month']['label'] = '';
+  $handler->display->display_options['fields']['field_month']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_month']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_month']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: Field: Graduation Year */
+  $handler->display->display_options['fields']['field_year']['id'] = 'field_year';
+  $handler->display->display_options['fields']['field_year']['table'] = 'field_data_field_year';
+  $handler->display->display_options['fields']['field_year']['field'] = 'field_year';
+  $handler->display->display_options['fields']['field_year']['label'] = '';
+  $handler->display->display_options['fields']['field_year']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_year']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_year']['settings'] = array(
+    'format_type' => 'year',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'show_repeat_rule' => 'show',
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<h2>[title]</h2>
+<span class="label-inline">School/Department – </span>[field_school_department]<br>
+<span class="label-inline">Project Status – </span>[field_status]<br>
+<span class="label-inline">Award Type – </span>[field_award_type]<br>
+<span class="label-inline">Award Date – </span>[field_month] [field_year]<br>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Sort criterion: Field: Graduation Year (field_year) */
+  $handler->display->display_options['sorts']['field_year_value']['id'] = 'field_year_value';
+  $handler->display->display_options['sorts']['field_year_value']['table'] = 'field_data_field_year';
+  $handler->display->display_options['sorts']['field_year_value']['field'] = 'field_year_value';
+  $handler->display->display_options['sorts']['field_year_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Month (field_month) */
+  $handler->display->display_options['sorts']['field_month_value']['id'] = 'field_month_value';
+  $handler->display->display_options['sorts']['field_month_value']['table'] = 'field_data_field_month';
+  $handler->display->display_options['sorts']['field_month_value']['field'] = 'field_month_value';
+  $handler->display->display_options['sorts']['field_month_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'seed_research_project' => 'seed_research_project',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+
+  /* Display: Seed Research List */
+  $handler = $view->new_display('panel_pane', 'Seed Research List', 'seed_research_pane');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'seed_research_project' => 'seed_research_project',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Search field (field_search_field) */
+  $handler->display->display_options['filters']['field_search_field_value']['id'] = 'field_search_field_value';
+  $handler->display->display_options['filters']['field_search_field_value']['table'] = 'field_data_field_search_field';
+  $handler->display->display_options['filters']['field_search_field_value']['field'] = 'field_search_field_value';
+  $handler->display->display_options['filters']['field_search_field_value']['operator'] = 'allwords';
+  $handler->display->display_options['filters']['field_search_field_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_search_field_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_search_field_value']['expose']['operator_id'] = 'field_search_field_value_op';
+  $handler->display->display_options['filters']['field_search_field_value']['expose']['operator'] = 'field_search_field_value_op';
+  $handler->display->display_options['filters']['field_search_field_value']['expose']['identifier'] = 'field_search_field_value';
+  $handler->display->display_options['filters']['field_search_field_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    11 => 0,
+    151 => 0,
+    16 => 0,
+    256 => 0,
+    21 => 0,
+    71 => 0,
+    241 => 0,
+    61 => 0,
+    171 => 0,
+    56 => 0,
+    66 => 0,
+    201 => 0,
+    221 => 0,
+    216 => 0,
+    226 => 0,
+    231 => 0,
+    246 => 0,
+    236 => 0,
+    31 => 0,
+    36 => 0,
+    41 => 0,
+    91 => 0,
+    146 => 0,
+    136 => 0,
+    26 => 0,
+    46 => 0,
+    51 => 0,
+    81 => 0,
+    86 => 0,
+    96 => 0,
+    106 => 0,
+    116 => 0,
+    121 => 0,
+    126 => 0,
+    131 => 0,
+    141 => 0,
+    156 => 0,
+    161 => 0,
+    166 => 0,
+    176 => 0,
+    181 => 0,
+    186 => 0,
+    191 => 0,
+    206 => 0,
+    211 => 0,
+    251 => 0,
+    261 => 0,
+    266 => 0,
+    271 => 0,
+    276 => 0,
+    281 => 0,
+    291 => 0,
+    296 => 0,
+    301 => 0,
+    101 => 0,
+    326 => 0,
+  );
+  $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Content: Status (field_status) */
+  $handler->display->display_options['filters']['field_status_tid']['id'] = 'field_status_tid';
+  $handler->display->display_options['filters']['field_status_tid']['table'] = 'field_data_field_status';
+  $handler->display->display_options['filters']['field_status_tid']['field'] = 'field_status_tid';
+  $handler->display->display_options['filters']['field_status_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_status_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_status_tid']['expose']['operator_id'] = 'field_status_tid_op';
+  $handler->display->display_options['filters']['field_status_tid']['expose']['label'] = 'Status';
+  $handler->display->display_options['filters']['field_status_tid']['expose']['operator'] = 'field_status_tid_op';
+  $handler->display->display_options['filters']['field_status_tid']['expose']['identifier'] = 'field_status_tid';
+  $handler->display->display_options['filters']['field_status_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_status_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    11 => 0,
+    151 => 0,
+    16 => 0,
+    256 => 0,
+    21 => 0,
+    71 => 0,
+    241 => 0,
+    61 => 0,
+    171 => 0,
+    56 => 0,
+    326 => 0,
+    66 => 0,
+    201 => 0,
+    221 => 0,
+    216 => 0,
+    226 => 0,
+    231 => 0,
+    246 => 0,
+    236 => 0,
+    31 => 0,
+    36 => 0,
+    41 => 0,
+    91 => 0,
+    146 => 0,
+    136 => 0,
+    26 => 0,
+    46 => 0,
+    51 => 0,
+    81 => 0,
+    86 => 0,
+    96 => 0,
+    106 => 0,
+    116 => 0,
+    121 => 0,
+    126 => 0,
+    131 => 0,
+    141 => 0,
+    156 => 0,
+    161 => 0,
+    166 => 0,
+    176 => 0,
+    181 => 0,
+    186 => 0,
+    191 => 0,
+    206 => 0,
+    211 => 0,
+    251 => 0,
+    261 => 0,
+    266 => 0,
+    271 => 0,
+    276 => 0,
+    281 => 0,
+    291 => 0,
+    296 => 0,
+    301 => 0,
+    101 => 0,
+  );
+  $handler->display->display_options['filters']['field_status_tid']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_status_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_status_tid']['vocabulary'] = 'seed_status';
+  $handler->display->display_options['filters']['field_status_tid']['error_message'] = FALSE;
+  /* Filter criterion: Content: Award Type (field_award_type) */
+  $handler->display->display_options['filters']['field_award_type_tid']['id'] = 'field_award_type_tid';
+  $handler->display->display_options['filters']['field_award_type_tid']['table'] = 'field_data_field_award_type';
+  $handler->display->display_options['filters']['field_award_type_tid']['field'] = 'field_award_type_tid';
+  $handler->display->display_options['filters']['field_award_type_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_award_type_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_award_type_tid']['expose']['operator_id'] = 'field_award_type_tid_op';
+  $handler->display->display_options['filters']['field_award_type_tid']['expose']['label'] = 'Award Type';
+  $handler->display->display_options['filters']['field_award_type_tid']['expose']['operator'] = 'field_award_type_tid_op';
+  $handler->display->display_options['filters']['field_award_type_tid']['expose']['identifier'] = 'field_award_type_tid';
+  $handler->display->display_options['filters']['field_award_type_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_award_type_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    11 => 0,
+    151 => 0,
+    16 => 0,
+    256 => 0,
+    21 => 0,
+    71 => 0,
+    241 => 0,
+    61 => 0,
+    171 => 0,
+    56 => 0,
+    326 => 0,
+    66 => 0,
+    201 => 0,
+    221 => 0,
+    216 => 0,
+    226 => 0,
+    231 => 0,
+    246 => 0,
+    236 => 0,
+    31 => 0,
+    36 => 0,
+    41 => 0,
+    91 => 0,
+    146 => 0,
+    136 => 0,
+    26 => 0,
+    46 => 0,
+    51 => 0,
+    81 => 0,
+    86 => 0,
+    96 => 0,
+    106 => 0,
+    116 => 0,
+    121 => 0,
+    126 => 0,
+    131 => 0,
+    141 => 0,
+    156 => 0,
+    161 => 0,
+    166 => 0,
+    176 => 0,
+    181 => 0,
+    186 => 0,
+    191 => 0,
+    206 => 0,
+    211 => 0,
+    251 => 0,
+    261 => 0,
+    266 => 0,
+    271 => 0,
+    276 => 0,
+    281 => 0,
+    291 => 0,
+    296 => 0,
+    301 => 0,
+    101 => 0,
+  );
+  $handler->display->display_options['filters']['field_award_type_tid']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_award_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_award_type_tid']['vocabulary'] = 'seed_award_type';
+  $handler->display->display_options['filters']['field_award_type_tid']['error_message'] = FALSE;
+  $handler->display->display_options['pane_title'] = 'Seed Research';
+  $handler->display->display_options['pane_category']['name'] = 'Non-customizable Content Lists';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $export['seed_research_listing'] = $view;
 
   return $export;
-}
-
-/**
- * Implements hook_defaultconfig_field_default_fields().
- */
-function gsb_feature_seed_research_library_display_defaultconfig_field_default_fields() {
-  $fields = array();
-
-  // Exported field: 'node-seed_research_project-field_abstract'.
-  $fields['node-seed_research_project-field_abstract'] = array(
-    'field_config' => array(
-      'active' => 1,
-      'cardinality' => 1,
-      'deleted' => 0,
-      'entity_types' => array(),
-      'field_name' => 'field_abstract',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => 0,
-      'module' => 'text',
-      'settings' => array(),
-      'translatable' => 0,
-      'type' => 'text_long',
-    ),
-    'field_instance' => array(
-      'bundle' => 'seed_research_project',
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'default_value' => NULL,
-      'deleted' => 0,
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(
-            'conditions' => array(),
-          ),
-          'type' => 'text_default',
-          'weight' => 7,
-        ),
-        'seed_research_project' => array(
-          'label' => 'inline',
-          'module' => 'text',
-          'settings' => array(
-            'conditions' => array(),
-          ),
-          'type' => 'text_default',
-          'weight' => 7,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'ds_extras_field_template' => '',
-      'entity_type' => 'node',
-      'field_name' => 'field_abstract',
-      'label' => 'Abstract',
-      'required' => 0,
-      'settings' => array(
-        'better_formats' => array(
-          'allowed_formats' => array(
-            'act' => 0,
-            'full_html' => 0,
-            'gsb_html_text' => 0,
-            'gsb_wysiwyg_text' => 0,
-            'image_resource_caption' => 0,
-            'image_text_equivalent' => 0,
-            'markdown' => 'markdown',
-            'markdown_lite_minus_resources' => 0,
-            'paragraphed_plain_text' => 0,
-            'plain_text' => 0,
-            'sidebar' => 0,
-            'slideshow' => 0,
-          ),
-          'allowed_formats_toggle' => 1,
-          'default_order_toggle' => 0,
-          'default_order_wrapper' => array(
-            'formats' => array(
-              'act' => array(
-                'weight' => 0,
-              ),
-              'full_html' => array(
-                'weight' => 1,
-              ),
-              'gsb_html_text' => array(
-                'weight' => -9,
-              ),
-              'gsb_wysiwyg_text' => array(
-                'weight' => -10,
-              ),
-              'image_resource_caption' => array(
-                'weight' => 0,
-              ),
-              'image_text_equivalent' => array(
-                'weight' => 0,
-              ),
-              'markdown' => array(
-                'weight' => 0,
-              ),
-              'markdown_lite_minus_resources' => array(
-                'weight' => 0,
-              ),
-              'paragraphed_plain_text' => array(
-                'weight' => 0,
-              ),
-              'plain_text' => array(
-                'weight' => 10,
-              ),
-              'sidebar' => array(
-                'weight' => 0,
-              ),
-              'slideshow' => array(
-                'weight' => 0,
-              ),
-            ),
-          ),
-        ),
-        'custom_add_another' => '',
-        'custom_remove' => '',
-        'linkit' => array(
-          'enable' => 0,
-          'insert_plugin' => '',
-        ),
-        'text_processing' => 1,
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'maxlength_js' => '',
-          'maxlength_js_enforce' => 0,
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-          'maxlength_js_truncate_html' => 0,
-          'rows' => 5,
-        ),
-        'type' => 'text_textarea',
-        'weight' => 8,
-      ),
-      'workbench_access_field' => 0,
-    ),
-  );
-
-  // Exported field: 'node-seed_research_project-field_award_type'.
-  $fields['node-seed_research_project-field_award_type'] = array(
-    'field_config' => array(
-      'active' => 1,
-      'cardinality' => -1,
-      'deleted' => 0,
-      'entity_types' => array(),
-      'field_name' => 'field_award_type',
-      'foreign keys' => array(
-        'tid' => array(
-          'columns' => array(
-            'tid' => 'tid',
-          ),
-          'table' => 'taxonomy_term_data',
-        ),
-      ),
-      'indexes' => array(
-        'tid' => array(
-          0 => 'tid',
-        ),
-      ),
-      'locked' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'allowed_values' => array(
-          0 => array(
-            'vocabulary' => 'seed_award_type',
-            'parent' => 0,
-          ),
-        ),
-      ),
-      'translatable' => 0,
-      'type' => 'taxonomy_term_reference',
-    ),
-    'field_instance' => array(
-      'bundle' => 'seed_research_project',
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'default_value' => NULL,
-      'deleted' => 0,
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'inline',
-          'module' => 'taxonomy',
-          'settings' => array(
-            'conditions' => array(),
-          ),
-          'type' => 'taxonomy_term_reference_plain',
-          'weight' => 5,
-        ),
-        'seed_research_project' => array(
-          'label' => 'inline',
-          'module' => 'taxonomy',
-          'settings' => array(
-            'conditions' => array(),
-          ),
-          'type' => 'taxonomy_term_reference_link',
-          'weight' => 5,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'ds_extras_field_template' => '',
-      'entity_type' => 'node',
-      'field_name' => 'field_award_type',
-      'label' => 'Award Type',
-      'required' => 1,
-      'settings' => array(
-        'custom_add_another' => '',
-        'custom_remove' => '',
-        'use_hierarchical_select_lite' => 0,
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'hs_taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_hs',
-        'weight' => 6,
-      ),
-      'workbench_access_field' => 0,
-    ),
-  );
-
-  // Exported field: 'node-seed_research_project-field_month'.
-  $fields['node-seed_research_project-field_month'] = array(
-    'field_config' => array(
-      'active' => 1,
-      'cardinality' => 1,
-      'deleted' => 0,
-      'entity_types' => array(),
-      'field_name' => 'field_month',
-      'foreign keys' => array(),
-      'indexes' => array(
-        'value' => array(
-          0 => 'value',
-        ),
-      ),
-      'locked' => 0,
-      'module' => 'list',
-      'settings' => array(
-        'allowed_values' => array(
-          0 => 'January',
-          1 => 'February',
-          2 => 'March',
-          3 => 'April',
-          4 => 'May',
-          5 => 'June',
-          6 => 'July',
-          7 => 'August',
-          8 => 'September',
-          9 => 'October',
-          10 => 'November',
-          11 => 'December',
-        ),
-        'allowed_values_function' => '',
-      ),
-      'translatable' => 0,
-      'type' => 'list_integer',
-    ),
-    'field_instance' => array(
-      'bundle' => 'seed_research_project',
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'default_value' => NULL,
-      'deleted' => 0,
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'inline',
-          'module' => 'list',
-          'settings' => array(
-            'conditions' => array(),
-          ),
-          'type' => 'list_default',
-          'weight' => 3,
-        ),
-        'seed_research_project' => array(
-          'label' => 'inline',
-          'module' => 'list',
-          'settings' => array(
-            'conditions' => array(),
-          ),
-          'type' => 'list_default',
-          'weight' => 3,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'ds_extras_field_template' => '',
-      'entity_type' => 'node',
-      'field_name' => 'field_month',
-      'label' => 'Month',
-      'required' => 1,
-      'settings' => array(
-        'custom_add_another' => '',
-        'custom_remove' => '',
-        'use_hierarchical_select_lite' => 0,
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_select',
-        'weight' => 56,
-      ),
-      'workbench_access_field' => 0,
-    ),
-  );
-
-  // Exported field: 'node-seed_research_project-field_research_locations'.
-  $fields['node-seed_research_project-field_research_locations'] = array(
-    'field_config' => array(
-      'active' => 1,
-      'cardinality' => -1,
-      'deleted' => 0,
-      'entity_types' => array(),
-      'field_name' => 'field_research_locations',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => 0,
-      'module' => 'text',
-      'settings' => array(
-        'max_length' => 255,
-      ),
-      'translatable' => 0,
-      'type' => 'text',
-    ),
-    'field_instance' => array(
-      'bundle' => 'seed_research_project',
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'default_value' => NULL,
-      'deleted' => 0,
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'inline',
-          'module' => 'text',
-          'settings' => array(
-            'conditions' => array(),
-          ),
-          'type' => 'text_default',
-          'weight' => 2,
-        ),
-        'seed_research_project' => array(
-          'label' => 'inline',
-          'module' => 'text',
-          'settings' => array(
-            'conditions' => array(),
-          ),
-          'type' => 'text_default',
-          'weight' => 2,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'ds_extras_field_template' => '',
-      'entity_type' => 'node',
-      'field_name' => 'field_research_locations',
-      'label' => 'Research Location(s)',
-      'required' => 1,
-      'settings' => array(
-        'better_formats' => array(
-          'allowed_formats' => array(
-            'act' => 'act',
-            'full_html' => 'full_html',
-            'gsb_html_text' => 'gsb_html_text',
-            'gsb_wysiwyg_text' => 'gsb_wysiwyg_text',
-            'image_resource_caption' => 'image_resource_caption',
-            'image_text_equivalent' => 'image_text_equivalent',
-            'markdown' => 'markdown',
-            'markdown_lite_minus_resources' => 'markdown_lite_minus_resources',
-            'paragraphed_plain_text' => 'paragraphed_plain_text',
-            'plain_text' => 'plain_text',
-            'sidebar' => 'sidebar',
-            'slideshow' => 'slideshow',
-          ),
-          'allowed_formats_toggle' => 0,
-          'default_order_toggle' => 0,
-          'default_order_wrapper' => array(
-            'formats' => array(
-              'act' => array(
-                'weight' => 0,
-              ),
-              'full_html' => array(
-                'weight' => 1,
-              ),
-              'gsb_html_text' => array(
-                'weight' => -9,
-              ),
-              'gsb_wysiwyg_text' => array(
-                'weight' => -10,
-              ),
-              'image_resource_caption' => array(
-                'weight' => 0,
-              ),
-              'image_text_equivalent' => array(
-                'weight' => 0,
-              ),
-              'markdown' => array(
-                'weight' => 0,
-              ),
-              'markdown_lite_minus_resources' => array(
-                'weight' => 0,
-              ),
-              'paragraphed_plain_text' => array(
-                'weight' => 0,
-              ),
-              'plain_text' => array(
-                'weight' => 10,
-              ),
-              'sidebar' => array(
-                'weight' => 0,
-              ),
-              'slideshow' => array(
-                'weight' => 0,
-              ),
-            ),
-          ),
-        ),
-        'custom_add_another' => '',
-        'custom_remove' => '',
-        'linkit' => array(
-          'enable' => 0,
-          'insert_plugin' => '',
-        ),
-        'text_processing' => 0,
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'maxlength_js' => 0,
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-          'size' => 60,
-        ),
-        'type' => 'text_textfield',
-        'weight' => 4,
-      ),
-      'workbench_access_field' => 0,
-    ),
-  );
-
-  // Exported field: 'node-seed_research_project-field_research_results'.
-  $fields['node-seed_research_project-field_research_results'] = array(
-    'field_config' => array(
-      'active' => 1,
-      'cardinality' => -1,
-      'deleted' => 0,
-      'entity_types' => array(),
-      'field_name' => 'field_research_results',
-      'foreign keys' => array(),
-      'indexes' => array(
-        'revision_id' => array(
-          0 => 'revision_id',
-        ),
-        'value' => array(
-          0 => 'value',
-        ),
-      ),
-      'locked' => 0,
-      'module' => 'field_collection',
-      'settings' => array(
-        'hide_blank_items' => 1,
-        'hide_initial_item' => FALSE,
-        'path' => '',
-      ),
-      'translatable' => 0,
-      'type' => 'field_collection',
-    ),
-    'field_instance' => array(
-      'bundle' => 'seed_research_project',
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'default_value' => NULL,
-      'deleted' => 0,
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'field_collection',
-          'settings' => array(
-            'conditions' => array(),
-            'view_mode' => 'full',
-          ),
-          'type' => 'field_collection_fields',
-          'weight' => 8,
-        ),
-        'seed_research_project' => array(
-          'label' => 'above',
-          'module' => 'field_collection',
-          'settings' => array(
-            'add' => 'Add',
-            'conditions' => array(),
-            'delete' => 'Delete',
-            'description' => TRUE,
-            'edit' => 'Edit',
-            'view_mode' => 'full',
-          ),
-          'type' => 'field_collection_view',
-          'weight' => 8,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'ds_extras_field_template' => '',
-      'entity_type' => 'node',
-      'field_name' => 'field_research_results',
-      'label' => 'Research Results',
-      'required' => 0,
-      'settings' => array(
-        'custom_add_another' => '',
-        'custom_remove' => '',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 0,
-        'module' => 'field_collection',
-        'settings' => array(),
-        'type' => 'field_collection_embed',
-        'weight' => 9,
-      ),
-      'workbench_access_field' => 0,
-    ),
-  );
-
-  // Exported field: 'node-seed_research_project-field_srl_co_investigators'.
-  $fields['node-seed_research_project-field_srl_co_investigators'] = array(
-    'field_config' => array(
-      'active' => 1,
-      'cardinality' => -1,
-      'deleted' => 0,
-      'entity_types' => array(),
-      'field_name' => 'field_srl_co_investigators',
-      'foreign keys' => array(),
-      'indexes' => array(
-        'revision_id' => array(
-          0 => 'revision_id',
-        ),
-        'value' => array(
-          0 => 'value',
-        ),
-      ),
-      'locked' => 0,
-      'module' => 'field_collection',
-      'settings' => array(
-        'hide_blank_items' => 1,
-        'hide_initial_item' => FALSE,
-        'path' => '',
-      ),
-      'translatable' => 0,
-      'type' => 'field_collection',
-    ),
-    'field_instance' => array(
-      'bundle' => 'seed_research_project',
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'default_value' => NULL,
-      'deleted' => 0,
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'field_collection',
-          'settings' => array(
-            'conditions' => array(),
-            'view_mode' => 'full',
-          ),
-          'type' => 'field_collection_fields',
-          'weight' => 1,
-        ),
-        'seed_research_project' => array(
-          'label' => 'inline',
-          'module' => 'field_collection',
-          'settings' => array(
-            'conditions' => array(),
-            'view_mode' => 'teaser',
-          ),
-          'type' => 'field_collection_fields',
-          'weight' => 1,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'ds_extras_field_template' => '',
-      'entity_type' => 'node',
-      'field_name' => 'field_srl_co_investigators',
-      'label' => 'Co-Investigators',
-      'required' => 0,
-      'settings' => array(
-        'custom_add_another' => '',
-        'custom_remove' => '',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 0,
-        'module' => 'field_collection',
-        'settings' => array(),
-        'type' => 'field_collection_embed',
-        'weight' => 3,
-      ),
-      'workbench_access_field' => 0,
-    ),
-  );
-
-  // Exported field: 'node-seed_research_project-field_srl_principal_investigator'.
-  $fields['node-seed_research_project-field_srl_principal_investigator'] = array(
-    'field_config' => array(
-      'active' => 1,
-      'cardinality' => 1,
-      'deleted' => 0,
-      'entity_types' => array(),
-      'field_name' => 'field_srl_principal_investigator',
-      'foreign keys' => array(),
-      'indexes' => array(
-        'revision_id' => array(
-          0 => 'revision_id',
-        ),
-        'value' => array(
-          0 => 'value',
-        ),
-      ),
-      'locked' => 0,
-      'module' => 'field_collection',
-      'settings' => array(
-        'hide_blank_items' => 1,
-        'hide_initial_item' => FALSE,
-        'path' => '',
-      ),
-      'translatable' => 0,
-      'type' => 'field_collection',
-    ),
-    'field_instance' => array(
-      'bundle' => 'seed_research_project',
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'default_value' => NULL,
-      'deleted' => 0,
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'field_collection',
-          'settings' => array(
-            'conditions' => array(),
-            'view_mode' => 'full',
-          ),
-          'type' => 'field_collection_fields',
-          'weight' => 0,
-        ),
-        'seed_research_project' => array(
-          'label' => 'above',
-          'module' => 'field_collection',
-          'settings' => array(
-            'conditions' => array(),
-            'view_mode' => 'teaser',
-          ),
-          'type' => 'field_collection_fields',
-          'weight' => 0,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'ds_extras_field_template' => 'theme_field',
-      'entity_type' => 'node',
-      'field_name' => 'field_srl_principal_investigator',
-      'label' => 'Principal Investigator',
-      'required' => 0,
-      'settings' => array(
-        'custom_add_another' => '',
-        'custom_remove' => '',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 0,
-        'module' => 'field_collection',
-        'settings' => array(),
-        'type' => 'field_collection_embed',
-        'weight' => 2,
-      ),
-      'workbench_access_field' => 0,
-    ),
-  );
-
-  // Exported field: 'node-seed_research_project-field_status'.
-  $fields['node-seed_research_project-field_status'] = array(
-    'field_config' => array(
-      'active' => 1,
-      'cardinality' => 1,
-      'deleted' => 0,
-      'entity_types' => array(),
-      'field_name' => 'field_status',
-      'foreign keys' => array(
-        'tid' => array(
-          'columns' => array(
-            'tid' => 'tid',
-          ),
-          'table' => 'taxonomy_term_data',
-        ),
-      ),
-      'indexes' => array(
-        'tid' => array(
-          0 => 'tid',
-        ),
-      ),
-      'locked' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'allowed_values' => array(
-          0 => array(
-            'vocabulary' => 'seed_status',
-            'parent' => 0,
-          ),
-        ),
-      ),
-      'translatable' => 0,
-      'type' => 'taxonomy_term_reference',
-    ),
-    'field_instance' => array(
-      'bundle' => 'seed_research_project',
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'default_value' => NULL,
-      'deleted' => 0,
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'inline',
-          'module' => 'taxonomy',
-          'settings' => array(
-            'conditions' => array(),
-          ),
-          'type' => 'taxonomy_term_reference_plain',
-          'weight' => 6,
-        ),
-        'seed_research_project' => array(
-          'label' => 'inline',
-          'module' => 'taxonomy',
-          'settings' => array(
-            'conditions' => array(),
-          ),
-          'type' => 'taxonomy_term_reference_link',
-          'weight' => 6,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'ds_extras_field_template' => '',
-      'entity_type' => 'node',
-      'field_name' => 'field_status',
-      'label' => 'Status',
-      'required' => 1,
-      'settings' => array(
-        'checkall' => array(
-          'checkall' => 0,
-          'checkall-check-all' => 1,
-          'checkall-toggle' => 1,
-          'checkall-uncheck-all' => 1,
-        ),
-        'custom_add_another' => '',
-        'custom_remove' => '',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(
-          'checkall' => FALSE,
-        ),
-        'type' => 'options_buttons',
-        'weight' => 7,
-      ),
-      'workbench_access_field' => 0,
-    ),
-  );
-
-  // Exported field: 'node-seed_research_project-field_year'.
-  $fields['node-seed_research_project-field_year'] = array(
-    'field_config' => array(
-      'active' => 1,
-      'cardinality' => 1,
-      'deleted' => 0,
-      'entity_types' => array(),
-      'field_name' => 'field_year',
-      'foreign keys' => array(),
-      'indexes' => array(),
-      'locked' => 0,
-      'module' => 'date',
-      'settings' => array(
-        'cache_count' => 4,
-        'cache_enabled' => 0,
-        'granularity' => array(
-          'day' => 0,
-          'hour' => 0,
-          'minute' => 0,
-          'month' => 0,
-          'second' => 0,
-          'year' => 'year',
-        ),
-        'repeat' => 0,
-        'timezone_db' => '',
-        'todate' => '',
-        'tz_handling' => 'none',
-      ),
-      'translatable' => 0,
-      'type' => 'datetime',
-    ),
-    'field_instance' => array(
-      'bundle' => 'seed_research_project',
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'deleted' => 0,
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'hidden',
-          'module' => 'date',
-          'settings' => array(
-            'conditions' => array(),
-            'format_type' => 'long',
-            'fromto' => 'both',
-            'multiple_from' => '',
-            'multiple_number' => '',
-            'multiple_to' => '',
-            'show_remaining_days' => FALSE,
-            'show_repeat_rule' => 'show',
-          ),
-          'type' => 'date_default',
-          'weight' => 4,
-        ),
-        'seed_research_project' => array(
-          'label' => 'hidden',
-          'module' => 'date',
-          'settings' => array(
-            'conditions' => array(),
-            'format_type' => 'long',
-            'fromto' => 'both',
-            'multiple_from' => '',
-            'multiple_number' => '',
-            'multiple_to' => '',
-            'show_remaining_days' => FALSE,
-            'show_repeat_rule' => 'show',
-          ),
-          'type' => 'date_default',
-          'weight' => 4,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'ds_extras_field_template' => '',
-      'entity_type' => 'node',
-      'field_name' => 'field_year',
-      'label' => 'Year',
-      'required' => 1,
-      'settings' => array(
-        'custom_add_another' => '',
-        'custom_remove' => '',
-        'default_value' => 'now',
-        'default_value2' => 'same',
-        'default_value_code' => '',
-        'default_value_code2' => '',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'date',
-        'settings' => array(
-          'display_all_day' => 0,
-          'increment' => 15,
-          'input_format' => 'M j Y - g:i:sa',
-          'input_format_custom' => '',
-          'label_position' => 'above',
-          'no_fieldset' => 0,
-          'repeat_collapsed' => 0,
-          'text_parts' => array(),
-          'year_range' => '-3:+3',
-        ),
-        'type' => 'date_text',
-        'weight' => 57,
-      ),
-      'workbench_access_field' => 0,
-    ),
-  );
-
-  // Translatables
-  // Included for use with string extractors like potx.
-  t('Abstract');
-  t('Award Type');
-  t('Co-Investigators');
-  t('Month');
-  t('Principal Investigator');
-  t('Research Location(s)');
-  t('Research Results');
-  t('Status');
-  t('Year');
-
-  return $fields;
 }
