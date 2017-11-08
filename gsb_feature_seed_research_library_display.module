@@ -7,6 +7,21 @@
 include_once 'gsb_feature_seed_research_library_display.features.inc';
 
 /**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function gsb_feature_seed_research_library_display_form_views_content_views_panes_content_type_edit_form_alter(&$form, &$form_state) {
+  // Alter 'Book filters' content pane settings form.
+  if ($form_state['pane']->subtype == 'seed_research_filters-seed_research_filters_pane' && $form_state['view']->name == 'seed_research_filters' && $form_state['view']->current_display == 'seed_research_filters_pane') {
+    //Hide all display modes except compact and expanded
+    $view_modes = $form['view_mode']['#options'];
+    foreach ($view_modes as $key => $value) {
+      if ($key !== 'compact' AND $key !== 'expanded') {
+        unset($form['view_mode']['#options'][$key]);
+      }
+    }
+  }
+}
+/**
  * Implements hook_form_FORM_ID_alter() for views_exposed_form.
  */
 function gsb_feature_seed_research_library_display_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
