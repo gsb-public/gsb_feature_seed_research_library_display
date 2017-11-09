@@ -5,3 +5,97 @@
  */
 
 include_once 'gsb_feature_seed_research_library_display.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function gsb_feature_seed_research_library_display_form_views_content_views_panes_content_type_edit_form_alter(&$form, &$form_state) {
+  $conf = $form_state['conf'];
+  if ($form_state['pane']->subtype == 'seed_research_filters-seed_research_filters_pane'
+    && $form_state['view']->name == 'seed_research_filters'
+    && $form_state['view']->current_display == 'seed_research_filters_pane') {
+    $form['cta_title'] = array(
+      '#title' => t('CTA Title'),
+      '#type' => 'textfield',
+      '#weight' => -97,
+      '#default_value' => !empty($conf['cta_title']) ? $conf['cta_title'] : '',
+    );
+    $form['cta_url'] = array(
+      '#title' => t('CTA URL'),
+      '#type' => 'textfield',
+      '#weight' => -97,
+      '#default_value' => !empty($conf['cta_url']) ? $conf['cta_url'] : '',
+    );
+  }
+  $form['#validate'][] = 'gsb_feature_seed_research_library_display_form_validate';
+  $form['#submit'][] = 'gsb_feature_seed_research_library_display_form_submit';
+  $form['comments']['#access'] = FALSE;
+  $form['links']['#access'] = FALSE;
+  return $form;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function gsb_feature_seed_research_library_display_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_state['view']->name == 'seed_research_listing'
+    && $form_state['view']->current_display == 'seed_research_pane') {
+    $form['#action'] = '';
+    $form['secondary']['done'] = array(
+      '#type' => 'submit',
+      '#value' => t('Done'),
+    );
+    $form['secondary']['clear-all'] = array(
+      '#type' => 'button',
+      '#value' => t('Clear All'),
+    );
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_validate().
+ */
+function gsb_feature_seed_research_library_display_form_validate($form, &$form_state) {
+  if ($form_state['values']['cta_title'] != '' && $form_state['values']['cta_url'] == '') {
+    form_set_error('cta_url', t('CTA Url is required.'));
+  }
+  if ($form_state['values']['cta_title'] == '' && $form_state['values']['cta_url'] != '') {
+    form_set_error('cta_title', t('CTA title is required.'));
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_submit().
+ */
+function gsb_feature_seed_research_library_display_form_submit($form, &$form_state) {
+  $form_state['conf']['cta_url'] = $form_state['values']['cta_url'];
+  $form_state['conf']['cta_title'] = $form_state['values']['cta_title'];
+}
+
+/**
+ * Implements hook_panels_pane_content_alter().
+ */
+function gsb_feature_seed_research_library_display_panels_pane_content_alter($content, $pane, $args, $context) {
+  if ($content && $content->subtype == 'seed_research_filters-seed_research_filters_pane') {
+    if (!empty($pane->configuration['cta_title'])) {
+      $url_parts = drupal_parse_url($pane->configuration['cta_url']);
+      $url_parts['html'] = TRUE;
+      $content->content['#markup'] .= '<div class="list-cta">' . l($pane->configuration['cta_title'], $url_parts['path'], $url_parts) . '</div>';
+    }
+  }
+}
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function gsb_feature_seed_research_library_display_module_implements_alter(&$implementations, $hook) {
+  if (in_array($hook, array('form_alter', 'menu_alter'))) {
+    // Allow gsb_feature_seed_research_library_display_form_views_content_
+    // views_panes_content_type_edit_form_alter to run last.
+    if (isset($implementations['gsb_feature_seed_research_library_display'])) {
+      $group = $implementations['gsb_feature_seed_research_library_display'];
+      unset($implementations['gsb_feature_seed_research_library_display']);
+      $implementations['gsb_feature_seed_research_library_display'] = $group;
+    }
+  }
+}
