@@ -353,7 +353,7 @@ function gsb_feature_seed_research_library_display_views_default_views() {
   $handler->display->display_options['filters']['field_award_type_tid']['group'] = 2;
   $handler->display->display_options['filters']['field_award_type_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_award_type_tid']['expose']['operator_id'] = 'field_award_type_tid_op';
-  $handler->display->display_options['filters']['field_award_type_tid']['expose']['label'] = 'Award Type (field_award_type)';
+  $handler->display->display_options['filters']['field_award_type_tid']['expose']['label'] = 'Award Type';
   $handler->display->display_options['filters']['field_award_type_tid']['expose']['operator'] = 'field_award_type_tid_op';
   $handler->display->display_options['filters']['field_award_type_tid']['expose']['identifier'] = 'field_award_type_tid';
   $handler->display->display_options['filters']['field_award_type_tid']['expose']['multiple'] = TRUE;
@@ -428,7 +428,7 @@ function gsb_feature_seed_research_library_display_views_default_views() {
   $handler->display->display_options['filters']['field_status_tid']['group'] = 2;
   $handler->display->display_options['filters']['field_status_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_status_tid']['expose']['operator_id'] = 'field_status_tid_op';
-  $handler->display->display_options['filters']['field_status_tid']['expose']['label'] = 'Status (field_status)';
+  $handler->display->display_options['filters']['field_status_tid']['expose']['label'] = 'Status';
   $handler->display->display_options['filters']['field_status_tid']['expose']['operator'] = 'field_status_tid_op';
   $handler->display->display_options['filters']['field_status_tid']['expose']['identifier'] = 'field_status_tid';
   $handler->display->display_options['filters']['field_status_tid']['expose']['multiple'] = TRUE;
