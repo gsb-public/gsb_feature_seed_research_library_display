@@ -232,37 +232,42 @@ function gsb_feature_seed_research_library_display_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Status */
-  $handler->display->display_options['fields']['field_status']['id'] = 'field_status';
-  $handler->display->display_options['fields']['field_status']['table'] = 'field_data_field_status';
-  $handler->display->display_options['fields']['field_status']['field'] = 'field_status';
-  $handler->display->display_options['fields']['field_status']['label'] = '';
-  $handler->display->display_options['fields']['field_status']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_status']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_status']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_status']['settings'] = array(
+  /* Field: Field collection item: School or Department */
+  $handler->display->display_options['fields']['field_school_department']['id'] = 'field_school_department';
+  $handler->display->display_options['fields']['field_school_department']['table'] = 'field_data_field_school_department';
+  $handler->display->display_options['fields']['field_school_department']['field'] = 'field_school_department';
+  $handler->display->display_options['fields']['field_school_department']['relationship'] = 'field_srl_principal_investigator_value';
+  $handler->display->display_options['fields']['field_school_department']['label'] = '';
+  $handler->display->display_options['fields']['field_school_department']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_school_department']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_school_department']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_school_department']['settings'] = array(
     'conditions' => array(
       0 => array(
         'condition' => '',
       ),
     ),
   );
-  /* Field: Content: Award Type */
-  $handler->display->display_options['fields']['field_award_type']['id'] = 'field_award_type';
-  $handler->display->display_options['fields']['field_award_type']['table'] = 'field_data_field_award_type';
-  $handler->display->display_options['fields']['field_award_type']['field'] = 'field_award_type';
-  $handler->display->display_options['fields']['field_award_type']['label'] = '';
-  $handler->display->display_options['fields']['field_award_type']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_award_type']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_award_type']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_award_type']['settings'] = array(
+  $handler->display->display_options['fields']['field_school_department']['delta_offset'] = '0';
+  /* Field: Content: Research Location(s) */
+  $handler->display->display_options['fields']['field_research_locations']['id'] = 'field_research_locations';
+  $handler->display->display_options['fields']['field_research_locations']['table'] = 'field_data_field_research_locations';
+  $handler->display->display_options['fields']['field_research_locations']['field'] = 'field_research_locations';
+  $handler->display->display_options['fields']['field_research_locations']['label'] = '';
+  $handler->display->display_options['fields']['field_research_locations']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_research_locations']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_research_locations']['alter']['text'] = '<span class="label-inline">Research Location – </span> [field_research_locations]<br>';
+  $handler->display->display_options['fields']['field_research_locations']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_research_locations']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_research_locations']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['field_research_locations']['settings'] = array(
     'conditions' => array(
       0 => array(
         'condition' => '',
       ),
     ),
   );
-  $handler->display->display_options['fields']['field_award_type']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_research_locations']['delta_offset'] = '0';
   /* Field: Content: Month */
   $handler->display->display_options['fields']['field_month']['id'] = 'field_month';
   $handler->display->display_options['fields']['field_month']['table'] = 'field_data_field_month';
@@ -305,8 +310,7 @@ function gsb_feature_seed_research_library_display_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<h2>[title]</h2>
 <span class="label-inline">School/Department – </span>[field_school_department]<br>
-<span class="label-inline">Project Status – </span>[field_status]<br>
-<span class="label-inline">Award Type – </span>[field_award_type]<br>
+[field_research_locations]
 <span class="label-inline">Award Date – </span>[field_month] [field_year]<br>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Sort criterion: Field: Graduation Year (field_year) */
@@ -492,157 +496,6 @@ function gsb_feature_seed_research_library_display_views_default_views() {
   $handler->display->display_options['filters']['field_status_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_status_tid']['vocabulary'] = 'seed_status';
   $handler->display->display_options['filters']['field_status_tid']['error_message'] = FALSE;
-  /* Filter criterion: Content: Research Location(s) (field_research_locations) */
-  $handler->display->display_options['filters']['field_research_locations_value']['id'] = 'field_research_locations_value';
-  $handler->display->display_options['filters']['field_research_locations_value']['table'] = 'field_data_field_research_locations';
-  $handler->display->display_options['filters']['field_research_locations_value']['field'] = 'field_research_locations_value';
-  $handler->display->display_options['filters']['field_research_locations_value']['group'] = 2;
-  $handler->display->display_options['filters']['field_research_locations_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_research_locations_value']['expose']['operator_id'] = 'field_research_locations_value_op';
-  $handler->display->display_options['filters']['field_research_locations_value']['expose']['label'] = 'Research Location(s) (field_research_locations)';
-  $handler->display->display_options['filters']['field_research_locations_value']['expose']['operator'] = 'field_research_locations_value_op';
-  $handler->display->display_options['filters']['field_research_locations_value']['expose']['identifier'] = 'field_research_locations_value';
-  $handler->display->display_options['filters']['field_research_locations_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    11 => 0,
-    151 => 0,
-    16 => 0,
-    256 => 0,
-    21 => 0,
-    71 => 0,
-    241 => 0,
-    61 => 0,
-    171 => 0,
-    56 => 0,
-    326 => 0,
-    66 => 0,
-    201 => 0,
-    221 => 0,
-    216 => 0,
-    226 => 0,
-    231 => 0,
-    246 => 0,
-    236 => 0,
-    31 => 0,
-    36 => 0,
-    41 => 0,
-    91 => 0,
-    146 => 0,
-    136 => 0,
-    26 => 0,
-    46 => 0,
-    51 => 0,
-    81 => 0,
-    86 => 0,
-    96 => 0,
-    106 => 0,
-    116 => 0,
-    121 => 0,
-    126 => 0,
-    131 => 0,
-    141 => 0,
-    156 => 0,
-    161 => 0,
-    166 => 0,
-    176 => 0,
-    181 => 0,
-    186 => 0,
-    191 => 0,
-    206 => 0,
-    211 => 0,
-    251 => 0,
-    261 => 0,
-    266 => 0,
-    271 => 0,
-    276 => 0,
-    281 => 0,
-    291 => 0,
-    296 => 0,
-    301 => 0,
-    101 => 0,
-  );
-  $handler->display->display_options['filters']['field_research_locations_value']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['field_research_locations_value']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['field_research_locations_value']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['field_research_locations_value']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['field_research_locations_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Field collection item: School or Department  (field_school_department) */
-  $handler->display->display_options['filters']['field_school_department_tid']['id'] = 'field_school_department_tid';
-  $handler->display->display_options['filters']['field_school_department_tid']['table'] = 'field_data_field_school_department';
-  $handler->display->display_options['filters']['field_school_department_tid']['field'] = 'field_school_department_tid';
-  $handler->display->display_options['filters']['field_school_department_tid']['relationship'] = 'field_srl_principal_investigator_value';
-  $handler->display->display_options['filters']['field_school_department_tid']['group'] = 2;
-  $handler->display->display_options['filters']['field_school_department_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_school_department_tid']['expose']['operator_id'] = 'field_school_department_tid_op';
-  $handler->display->display_options['filters']['field_school_department_tid']['expose']['label'] = 'School or Department (field_school_department)';
-  $handler->display->display_options['filters']['field_school_department_tid']['expose']['operator'] = 'field_school_department_tid_op';
-  $handler->display->display_options['filters']['field_school_department_tid']['expose']['identifier'] = 'field_school_department_tid';
-  $handler->display->display_options['filters']['field_school_department_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_school_department_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    11 => 0,
-    151 => 0,
-    16 => 0,
-    256 => 0,
-    21 => 0,
-    71 => 0,
-    241 => 0,
-    61 => 0,
-    171 => 0,
-    56 => 0,
-    326 => 0,
-    66 => 0,
-    201 => 0,
-    221 => 0,
-    216 => 0,
-    226 => 0,
-    231 => 0,
-    246 => 0,
-    236 => 0,
-    31 => 0,
-    36 => 0,
-    41 => 0,
-    91 => 0,
-    146 => 0,
-    136 => 0,
-    26 => 0,
-    46 => 0,
-    51 => 0,
-    81 => 0,
-    86 => 0,
-    96 => 0,
-    106 => 0,
-    116 => 0,
-    121 => 0,
-    126 => 0,
-    131 => 0,
-    141 => 0,
-    156 => 0,
-    161 => 0,
-    166 => 0,
-    176 => 0,
-    181 => 0,
-    186 => 0,
-    191 => 0,
-    206 => 0,
-    211 => 0,
-    251 => 0,
-    261 => 0,
-    266 => 0,
-    271 => 0,
-    276 => 0,
-    281 => 0,
-    291 => 0,
-    296 => 0,
-    301 => 0,
-    101 => 0,
-  );
-  $handler->display->display_options['filters']['field_school_department_tid']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['filters']['field_school_department_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_school_department_tid']['vocabulary'] = 'schools';
-  $handler->display->display_options['filters']['field_school_department_tid']['error_message'] = FALSE;
 
   /* Display: Seed Research Filters */
   $handler = $view->new_display('panel_pane', 'Seed Research Filters', 'seed_research_filters_pane');
@@ -781,8 +634,7 @@ function gsb_feature_seed_research_library_display_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'entity';
-  $handler->display->display_options['row_options']['view_mode'] = 'expanded';
+  $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
@@ -795,7 +647,7 @@ function gsb_feature_seed_research_library_display_views_default_views() {
   $handler->display->display_options['pane_category']['name'] = 'Customizable Content Lists';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 0;
-  $handler->display->display_options['allow']['set_view_mode'] = 'set_view_mode';
+  $handler->display->display_options['allow']['set_view_mode'] = 0;
   $handler->display->display_options['allow']['set_style_plugin'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
   $handler->display->display_options['allow']['offset'] = 0;
@@ -809,6 +661,8 @@ function gsb_feature_seed_research_library_display_views_default_views() {
     'filters' => array(
       'field_award_type_tid' => '',
       'field_status_tid' => '',
+      'field_research_locations_value' => '',
+      'field_school_department_tid' => '',
     ),
   );
   $export['seed_research_filters'] = $view;
@@ -1007,7 +861,7 @@ function gsb_feature_seed_research_library_display_views_default_views() {
       ),
     ),
   );
-  /* Field: Field collection item: School or Department  */
+  /* Field: Field collection item: School or Department */
   $handler->display->display_options['fields']['field_school_department']['id'] = 'field_school_department';
   $handler->display->display_options['fields']['field_school_department']['table'] = 'field_data_field_school_department';
   $handler->display->display_options['fields']['field_school_department']['field'] = 'field_school_department';
