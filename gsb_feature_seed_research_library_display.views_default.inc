@@ -232,6 +232,21 @@ function gsb_feature_seed_research_library_display_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Field collection item: Name */
+  $handler->display->display_options['fields']['field_other_name']['id'] = 'field_other_name';
+  $handler->display->display_options['fields']['field_other_name']['table'] = 'field_data_field_other_name';
+  $handler->display->display_options['fields']['field_other_name']['field'] = 'field_other_name';
+  $handler->display->display_options['fields']['field_other_name']['relationship'] = 'field_srl_principal_investigator_value';
+  $handler->display->display_options['fields']['field_other_name']['label'] = '';
+  $handler->display->display_options['fields']['field_other_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_other_name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_other_name']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
   /* Field: Field collection item: School or Department */
   $handler->display->display_options['fields']['field_school_department']['id'] = 'field_school_department';
   $handler->display->display_options['fields']['field_school_department']['table'] = 'field_data_field_school_department';
@@ -309,6 +324,7 @@ function gsb_feature_seed_research_library_display_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<h2>[title]</h2>
+<span class="label-inline">Principal Investigator – </span>[field_other_name]<br>
 <span class="label-inline">School/Department – </span>[field_school_department]<br>
 [field_research_locations]
 <span class="label-inline">Award Date – </span>[field_month] [field_year]<br>';
