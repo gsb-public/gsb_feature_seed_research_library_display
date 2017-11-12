@@ -270,10 +270,7 @@ function gsb_feature_seed_research_library_display_views_default_views() {
   $handler->display->display_options['fields']['field_research_locations']['field'] = 'field_research_locations';
   $handler->display->display_options['fields']['field_research_locations']['label'] = '';
   $handler->display->display_options['fields']['field_research_locations']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_research_locations']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_research_locations']['alter']['text'] = '<span class="label-inline">Research Location – </span> [field_research_locations]<br>';
   $handler->display->display_options['fields']['field_research_locations']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_research_locations']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_research_locations']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_research_locations']['settings'] = array(
     'conditions' => array(
@@ -323,11 +320,10 @@ function gsb_feature_seed_research_library_display_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<h2>[title]</h2>
-<span class="label-inline">Principal Investigator – </span>[field_other_name]<br>
-<span class="label-inline">School/Department – </span>[field_school_department]<br>
-[field_research_locations]
-<span class="label-inline">Award Date – </span>[field_month] [field_year]<br>';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="listing-field-title"><h2>[title]</h2></div>
+<div class="listing-field"><span class="label-inline">School/Dept.</span> – [field_school_department]</div>
+<div class="listing-field"><span class="label-inline">Research Location</span> – [field_research_locations]</div>
+<div class="listing-field"><span class="label-inline">Awarded</span> – [field_month] [field_year]</div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Sort criterion: Field: Graduation Year (field_year) */
   $handler->display->display_options['sorts']['field_year_value']['id'] = 'field_year_value';
@@ -862,6 +858,22 @@ function gsb_feature_seed_research_library_display_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Field collection item: Name */
+  $handler->display->display_options['fields']['field_other_name']['id'] = 'field_other_name';
+  $handler->display->display_options['fields']['field_other_name']['table'] = 'field_data_field_other_name';
+  $handler->display->display_options['fields']['field_other_name']['field'] = 'field_other_name';
+  $handler->display->display_options['fields']['field_other_name']['relationship'] = 'field_srl_principal_investigator_value';
+  $handler->display->display_options['fields']['field_other_name']['label'] = '';
+  $handler->display->display_options['fields']['field_other_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_other_name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_other_name']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['field_other_name']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
   /* Field: Content: Status */
   $handler->display->display_options['fields']['field_status']['id'] = 'field_status';
   $handler->display->display_options['fields']['field_status']['table'] = 'field_data_field_status';
@@ -945,16 +957,32 @@ function gsb_feature_seed_research_library_display_views_default_views() {
       ),
     ),
   );
+  /* Field: Content: Research Location(s) */
+  $handler->display->display_options['fields']['field_research_locations']['id'] = 'field_research_locations';
+  $handler->display->display_options['fields']['field_research_locations']['table'] = 'field_data_field_research_locations';
+  $handler->display->display_options['fields']['field_research_locations']['field'] = 'field_research_locations';
+  $handler->display->display_options['fields']['field_research_locations']['label'] = '';
+  $handler->display->display_options['fields']['field_research_locations']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_research_locations']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_research_locations']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['field_research_locations']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_research_locations']['delta_offset'] = '0';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<h2>[title]</h2>
-<span class="label-inline">School/Department – </span>[field_school_department]<br>
-<span class="label-inline">Project Status – </span>[field_status]<br>
-<span class="label-inline">Award Type – </span>[field_award_type]<br>
-<span class="label-inline">Award Date – </span>[field_month] [field_year]<br>';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="listing-field-title"><h2>[title]</h2></div>
+<div class="listing-field"><span class="label-inline">Principal Investigator</span> – [field_other_name], [field_school_department]</div>
+<div class="listing-field"><span class="label-inline">Award Type</span> – [field_award_type]</div>
+<div class="listing-field"><span class="label-inline">Research Location</span> – [field_research_locations]</div>
+<div class="listing-field"><span class="label-inline">Award Date</span> – [field_month] [field_year], [field_status]</div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Sort criterion: Field: Graduation Year (field_year) */
   $handler->display->display_options['sorts']['field_year_value']['id'] = 'field_year_value';
