@@ -874,6 +874,23 @@ function gsb_feature_seed_research_library_display_views_default_views() {
       ),
     ),
   );
+  /* Field: Field: Faculty Name */
+  $handler->display->display_options['fields']['field_person_fac_single_ref']['id'] = 'field_person_fac_single_ref';
+  $handler->display->display_options['fields']['field_person_fac_single_ref']['table'] = 'field_data_field_person_fac_single_ref';
+  $handler->display->display_options['fields']['field_person_fac_single_ref']['field'] = 'field_person_fac_single_ref';
+  $handler->display->display_options['fields']['field_person_fac_single_ref']['relationship'] = 'field_srl_principal_investigator_value';
+  $handler->display->display_options['fields']['field_person_fac_single_ref']['label'] = '';
+  $handler->display->display_options['fields']['field_person_fac_single_ref']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_person_fac_single_ref']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_person_fac_single_ref']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 0,
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
   /* Field: Content: Status */
   $handler->display->display_options['fields']['field_status']['id'] = 'field_status';
   $handler->display->display_options['fields']['field_status']['table'] = 'field_data_field_status';
@@ -979,7 +996,7 @@ function gsb_feature_seed_research_library_display_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="listing-field-title"><h2>[title]</h2></div>
-<div class="listing-field"><span class="label-inline">Principal Investigator</span> – [field_other_name], [field_school_department]</div>
+<div class="listing-field"><span class="label-inline">Principal Investigator</span> – [field_other_name][field_person_fac_single_ref], [field_school_department]</div>
 <div class="listing-field"><span class="label-inline">Award Type</span> – [field_award_type]</div>
 <div class="listing-field"><span class="label-inline">Research Location</span> – [field_research_locations]</div>
 <div class="listing-field"><span class="label-inline">Award Date</span> – [field_month] [field_year], [field_status]</div>';
