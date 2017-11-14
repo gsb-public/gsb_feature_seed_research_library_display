@@ -45,7 +45,7 @@ function gsb_feature_seed_research_library_display_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'lb-el' => 'h3',
+          'lb-el' => 'h2',
           'lb-col' => TRUE,
           'ow' => TRUE,
           'ow-el' => 'div',
@@ -60,7 +60,6 @@ function gsb_feature_seed_research_library_display_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'lb' => 'Award Type - ',
           'lb-el' => 'h5',
           'lb-col' => TRUE,
           'ow' => TRUE,
@@ -76,7 +75,7 @@ function gsb_feature_seed_research_library_display_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'lb' => 'Research Location - ',
+          'lb' => 'Research Location',
           'lb-el' => 'h5',
           'lb-col' => TRUE,
           'ow' => TRUE,
@@ -92,7 +91,7 @@ function gsb_feature_seed_research_library_display_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'lb-el' => 'h3',
+          'lb-el' => 'h2',
           'lb-col' => TRUE,
           'ow' => TRUE,
           'ow-el' => 'div',
@@ -137,7 +136,6 @@ function gsb_feature_seed_research_library_display_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'lb' => 'Status - ',
           'lb-el' => 'h5',
           'lb-col' => TRUE,
           'ow' => TRUE,
@@ -270,18 +268,16 @@ function gsb_feature_seed_research_library_display_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'field_srl_principal_investigator',
         1 => 'field_srl_co_investigators',
-        2 => 'gsb_feature_seed_research_library_display_award_date',
-        3 => 'field_award_type',
-        4 => 'field_status',
-        5 => 'field_abstract',
-        6 => 'field_research_locations',
-        7 => 'field_research_results',
+        2 => 'field_award_type',
+        3 => 'field_status',
+        4 => 'field_abstract',
+        5 => 'field_research_locations',
+        6 => 'field_research_results',
       ),
     ),
     'fields' => array(
       'field_srl_principal_investigator' => 'ds_content',
       'field_srl_co_investigators' => 'ds_content',
-      'gsb_feature_seed_research_library_display_award_date' => 'ds_content',
       'field_award_type' => 'ds_content',
       'field_status' => 'ds_content',
       'field_abstract' => 'ds_content',
