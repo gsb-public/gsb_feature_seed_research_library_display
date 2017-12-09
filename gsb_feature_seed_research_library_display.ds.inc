@@ -22,12 +22,25 @@ function gsb_feature_seed_research_library_display_ds_field_settings_info() {
         'ft' => array(
           'func' => 'theme_ds_field_expert',
           'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'field-name-field-file-single-public',
+          'fi-el' => 'span',
+          'fi-cl' => '',
           'fi-at' => '',
           'fi-def-at' => FALSE,
           'fi-odd-even' => FALSE,
           'fi-first-last' => FALSE,
+        ),
+      ),
+    ),
+    'field_link_single' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'span',
+          'ow-cl' => '',
+          'ow-def-cl' => TRUE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
         ),
       ),
     ),
@@ -171,11 +184,13 @@ function gsb_feature_seed_research_library_display_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'field_link_single',
         1 => 'field_file_single_public',
+        2 => 'field_description',
       ),
     ),
     'fields' => array(
       'field_link_single' => 'ds_content',
       'field_file_single_public' => 'ds_content',
+      'field_description' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
