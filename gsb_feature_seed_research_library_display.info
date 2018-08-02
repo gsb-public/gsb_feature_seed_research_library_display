@@ -3,6 +3,7 @@ description = Display for Seed Research Library
 core = 7.x
 package = GSB
 version = 7.x-6.44
+project = gsb_feature_seed_research_library_display
 dependencies[] = better_exposed_filters
 dependencies[] = ctools
 dependencies[] = ds
